@@ -120,7 +120,7 @@ button {
 
 #timeline_div {
     background-color: #fff;
-    height: $timeline_div_height;
+    min-height: $timeline_div_height;
     user-select: none;
 
     & > .row {
@@ -157,8 +157,9 @@ button {
 
         &__menu {
             padding: 0px 10px;
-            height: calc(#{$timeline_div_height} - #{$timeline_top_bar_height});
+            min-height: calc(#{$timeline_div_height} - #{$timeline_top_bar_height});
             padding-top: 30px;
+            margin-bottom: 30px;
 
             &__menu_element {
                 min-height: $timeline_lhs_menu_element_height;
@@ -198,16 +199,22 @@ button {
                     flex-grow: 1;
                     text-align: right;
                     border-left: 1px solid #d5d5d5;
+                    //padding: 0px 15px;
+                    padding: $padding_top_bottom 15px;
 
                     .project_name {
                         //padding: 20px 0px;
-                        padding-right: 20px;
+                        //padding-right: 20px;
                         font-size: 14px;
                         height: $timeline_menu_project_name_height;
                         display: flex;
                         align-items: center;
                         justify-content: flex-end;
                     }
+                }
+
+                &:last-child {
+                    //border-bottom: none;
                 }
             }
         }
@@ -220,6 +227,9 @@ button {
         min-width: calc(100% - #{$timeline_lhs_width});
 
         overflow: auto;
+
+        display: flex;
+        align-items: flex-start;
 
         &__top_bar {
             background-color: #162F57;
@@ -249,17 +259,17 @@ button {
             height: calc(#{$timeline_div_height} - (#{$timeline_top_bar_height} + 20px));
             padding-top: 30px;
             .graph_bar_div {
-                height: 85px;
+                height: $timeline_lhs_menu_element_height;
                 display: flex;
                 align-items: center;
 
-                &::before {
+                /* &::before {
                     content: '';
                     width: 100%;
                     height: 1px;
                     background-color: #E1E1E1;
                     position: absolute; 
-                }
+                } */
 
                 .graph_bar {
                     
@@ -279,6 +289,11 @@ button {
                         width: (($timeline_month_width/30)*15) + ($timeline_month_width*3); //(15 days and 3 months)
                         left: (($timeline_month_width/30)*5) + ($timeline_month_width*1); // 5th + February(0)
                     }
+                    &.red {
+                        background-color: #F48786;
+                        width: (($timeline_month_width/30)*15) + ($timeline_month_width*3); //(15 days and 3 months)
+                        left: (($timeline_month_width/30)*5) + ($timeline_month_width*4); // 5th + February(0)
+                    }
 
                     
                 }
@@ -290,8 +305,87 @@ button {
                 align-items: center;
                 background-color: #F2F2F2;
                 box-shadow: inset 0px 0px 20px rgba(172, 172, 172, 0.2);
+                padding: $padding_top_bottom 15px;
+
+                flex-direction: column;
+                box-sizing: content-box;
+
+                .graph_bar_div {
+                    height: $timeline_menu_project_name_height;
+                    display: flex;
+                    width: 100%;
+                    //align-items: center;
+    
+                    &::before {
+                        content: '';
+                        width: 96%;
+                        height: 1px;
+                        background-color: #E1E1E1;
+                        position: absolute; 
+                    }
+    
+                    .graph_bar {
+                        position: relative;
+                        width: $timeline_graph_circle_width;
+                        height: $timeline_graph_circle_width;
+                        border-radius: 50px;
+  
+                    .text {
+                        position: absolute;
+                        top: 50px;
+                        font-size: 11px;
+                        font-weight: 600;
+                        font-family: "open sans";
+                        left: 2px;
+                        width: 150%;
+                    }
+    
+                        &.blue {
+                            background-color: #4A86E8;
+                            //width: (($timeline_month_width/30)*2) + ($timeline_month_width*2); //(2 days and 2 months)
+                            
+                            
+                        }  
+                        &.red {
+                            background-color: #F48786;
+                            
+                            &.one {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*1.5); // 5th + January(0)
+                            }
+                            &.two {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*4.5); // 5th + February(0)
+                            }
+                        }         
+                        &.purple {
+                            background-color: #9D9DF5;
+                            
+                            &.one {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2.5); // 5th + January(0)
+                            }
+                            &.two {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*3.5); // 5th + February(0)
+                            }
+                        }         
+                        &.darkpurple {
+                            background-color: #B171CE;
+                            
+                            &.one {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + January(0)
+                            }
+                            &.two {
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*5); // 5th + February(0)
+                            }
+                        }         
+                    }
+                }
             }
         }
+    }
+
+    .expand_all {
+        position: absolute;
+        top: 0px;
+        right: 15px;
     }
 }
 /*** Content Container ***/
