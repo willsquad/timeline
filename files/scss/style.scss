@@ -148,6 +148,9 @@ button {
             justify-content: center;
             //border-bottom: 1px solid #D5D5D5;
 
+            background-color: #132645;
+            color: #fff;
+
             h2 {
                 font-family: montserrat;
                 font-size: 18px;
@@ -164,7 +167,7 @@ button {
         &__menu {
             padding: 0px 10px;
             min-height: calc(#{$timeline_div_height} - #{$timeline_top_bar_height});
-            padding-top: 30px;
+            padding-top: $content_padding_top;
             margin-bottom: 30px;
 
             &__menu_element {
@@ -240,41 +243,6 @@ button {
         &.top_rhs {
             background-color: $timeline_div_container_bg;
             height: $timeline_top_bar_height - 10px;
-
-            .milestone_div {
-                position: relative;
-                
-                height: $timeline_top_bar_height - 10px;
-                width: 50px;
-                background: transparent;
-                border-left: 2px solid #333;
-
-                &.one {
-                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0); // 5th + January(0)
-                }
-                &.two {
-                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*1); // 5th + February(0)
-                }
-
-                .flag {
-                    position: relative;
-                    left: 2px;
-                    width: 0; 
-                    height: 0; 
-                    border-top: 15px solid transparent;
-                    border-bottom: 15px solid transparent;
-                    border-left: 30px solid #888;
-                    
-                    &.one{
-                        border-left: 30px solid #4A86E8;
-                    }
-                    &.two{
-                        border-left: 30px solid #8FD285;
-                    }
-                    
-                }
-
-            }
         }
 
         &__top_bar {
@@ -300,11 +268,56 @@ button {
                 }
             }
 
+            .milestone_div {
+                /* position: absolute;
+                height: 85px;
+                width: 50px;
+                background: transparent;
+                border-left: 2px solid #fff;
+                top: 5px; */
+
+                position: absolute;
+                height: 40px;
+                width: 50px;
+                background: transparent;
+                border-left: 2px solid #666;
+                top: 95px;
+                display: none;
+
+                &.one {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0); // 5th + January(0)
+                }
+                &.two {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + February(0)
+                }
+
+                .flag {
+                    position: relative;
+                    left: 1px;
+                    width: 0; 
+                    height: 0; 
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-left: 24px solid #888;
+                    bottom: 0px;
+                    position: absolute;
+                    
+                    &.one{
+                        border-left: 24px solid #4A86E8;
+                    }
+                    &.two{
+                        border-left: 24px solid #8FD285;
+                    }
+                    
+                }
+
+            }
+
         }
 
         &__content {
             height: calc(#{$timeline_div_height} - (#{$timeline_top_bar_height} + 20px));
-            padding-top: 30px;
+            padding-top: $content_padding_top;
             .graph_bar_div {
                 height: $timeline_lhs_menu_element_height;
                 display: flex;
