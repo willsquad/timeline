@@ -1,0 +1,279 @@
+@import 'base/variables';
+@import 'base/bootstrap_variables';
+@import 'mixins/breakpoints';
+
+body {
+    background-color: #F7F7F7; //overflow-y: hidden;
+    font-family: "open sans";
+}
+
+input {
+    font-family: "open sans";
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ANIMATIONS  */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInDown {
+    animation-name: slideInDown;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    animation-name: zoomIn;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInLeft {
+    animation-name: slideInLeft;
+  }
+
+  @keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
+/* ANIMATIONS  */
+
+/*** Content Container ***/
+.timeline_div_container {
+    background-color: #EAEAEA;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#timeline_div {
+    background-color: #fff;
+    height: $timeline_div_height;
+    user-select: none;
+
+    & > .row {
+        height: 100%;
+    }
+
+    .timeline_lhs {
+        background-color: #fff;
+        box-shadow: 5px 0px 15px -4px rgba(125, 125, 125, 0.25);
+        z-index: 1000;
+
+        max-width: $timeline_lhs_width;
+        min-width: $timeline_lhs_width;
+
+        &__top_bar_logo {
+            height: $timeline_top_bar_height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //border-bottom: 1px solid #D5D5D5;
+
+            h2 {
+                font-family: montserrat;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 0px;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 17px;
+                }
+            }
+        }
+
+        &__menu {
+            padding: 0px 10px;
+            height: calc(#{$timeline_div_height} - #{$timeline_top_bar_height});
+            padding-top: 30px;
+
+            &__menu_element {
+                min-height: $timeline_lhs_menu_element_height;
+                display: flex;
+                align-items: center;
+                font-family: "open sans";
+                font-size: 15px;
+                font-weight: 600;
+                border-bottom: 1px solid #D5D5D5;
+                padding-left: 20px;
+                justify-content: space-between;
+                cursor: pointer;
+
+
+                &__team_container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+
+                    &.project_active {
+                        width: auto;
+                        padding-right: 30px;
+                    }
+
+                    & > .icon {
+                        display: flex;
+                    }
+    
+                    i {
+                        font-size: 32px;
+                    }
+    
+                }
+
+                &__project_container {
+                    flex-grow: 1;
+                    text-align: right;
+                    border-left: 1px solid #d5d5d5;
+
+                    .project_name {
+                        //padding: 20px 0px;
+                        padding-right: 20px;
+                        font-size: 14px;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+
+    .timeline_rhs {
+        background-color: #fbfbfb;
+
+        max-width: calc(100% - #{$timeline_lhs_width});
+        min-width: calc(100% - #{$timeline_lhs_width});
+
+        overflow: auto;
+
+        &__top_bar {
+            background-color: #162F57;
+            height: $timeline_top_bar_height;
+            color: #fff;
+            display: flex;
+
+            .month {
+                min-width: $timeline_month_width;
+                display: flex;
+                align-items: center;
+                background-color: #162F57;
+                padding-left: 15px;
+                
+                &::before {
+                    content: '';
+                    height: 40px;
+                    width: 1px;
+                    background-color: #6C6C6C;
+                    position: relative;
+                    left: -15px;
+                }
+            }
+        }
+
+        &__content {
+            height: calc(#{$timeline_div_height} - (#{$timeline_top_bar_height} + 20px));
+            padding-top: 30px;
+            .graph_bar_div {
+                height: 85px;
+                display: flex;
+                align-items: center;
+
+                .graph_bar {
+                    
+                    
+                    height: 45px;
+                    border-radius: 50px;
+                    position: relative;
+                    
+
+                    &.blue {
+                        background-color: #4A86E8;
+                        width: 350px;
+                        left: ($timeline_month_width/30) * 5 + $timeline_month_width*0; // Januray : 5 days
+                    }
+                    &.green {
+                        background-color: #8FD285;
+                        width: 450px;
+                        left: ($timeline_month_width/30) * 5 + $timeline_month_width*1; // February : 5 days
+                    }
+                }
+            }
+        }
+    }
+}
+/*** Content Container ***/
