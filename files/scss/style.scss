@@ -112,7 +112,7 @@ button {
 
 /*** Content Container ***/
 .timeline_div_container {
-    background-color: #EAEAEA;
+    background-color: $timeline_div_container_bg;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -134,6 +134,12 @@ button {
 
         max-width: $timeline_lhs_width;
         min-width: $timeline_lhs_width;
+
+        &.top_lhs {
+            background-color: $timeline_div_container_bg;
+            height: $timeline_top_bar_height - 10px;
+            box-shadow: none;
+        }
 
         &__top_bar_logo {
             height: $timeline_top_bar_height;
@@ -231,6 +237,46 @@ button {
         display: flex;
         align-items: flex-start;
 
+        &.top_rhs {
+            background-color: $timeline_div_container_bg;
+            height: $timeline_top_bar_height - 10px;
+
+            .milestone_div {
+                position: relative;
+                
+                height: $timeline_top_bar_height - 10px;
+                width: 50px;
+                background: transparent;
+                border-left: 2px solid #333;
+
+                &.one {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0); // 5th + January(0)
+                }
+                &.two {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*1); // 5th + February(0)
+                }
+
+                .flag {
+                    position: relative;
+                    left: 2px;
+                    width: 0; 
+                    height: 0; 
+                    border-top: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    border-left: 30px solid #888;
+                    
+                    &.one{
+                        border-left: 30px solid #4A86E8;
+                    }
+                    &.two{
+                        border-left: 30px solid #8FD285;
+                    }
+                    
+                }
+
+            }
+        }
+
         &__top_bar {
             background-color: #162F57;
             height: $timeline_top_bar_height;
@@ -253,6 +299,7 @@ button {
                     left: -15px;
                 }
             }
+
         }
 
         &__content {
