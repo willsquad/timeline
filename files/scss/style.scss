@@ -84,6 +84,68 @@ button {
     animation-name: slideInLeft;
   }
 
+  @-webkit-keyframes slideOutLeft {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutLeft {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
+  .slideOutLeft {
+    -webkit-animation-name: slideOutLeft;
+    animation-name: slideOutLeft;
+  }
+  
+  @-webkit-keyframes slideOutRight {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  .slideOutRight {
+    -webkit-animation-name: slideOutRight;
+    animation-name: slideOutRight;
+  }
+
   @keyframes rotating {
     from {
         -ms-transform: rotate(0deg);
@@ -384,6 +446,7 @@ button {
                     height: 45px;
                     border-radius: 50px;
                     position: relative;
+                    cursor: pointer;
                     
 
                     &.blue {
@@ -436,6 +499,8 @@ button {
                         width: $timeline_graph_circle_width;
                         height: $timeline_graph_circle_width;
                         border-radius: 50px;
+
+                        cursor: pointer;
   
                     .text {
                         position: absolute;
@@ -489,8 +554,8 @@ button {
         } /* Timeline RHS Content  */
 
         &__sliding_rhs_div {
-            //width: 400px;
-            width: 0px;
+            width: 400px;
+            //width: 0px;
             min-height: 100%;
             background-color: #fff;
             position: absolute;
@@ -498,6 +563,99 @@ button {
             right: 0px;
             position: fixed;
             box-shadow: -5px 0px 15px -4px rgba(125,125,125,0.25);
+            padding: 30px;
+            padding-top: 40px;
+            
+            .close_rhs {
+                float: right;
+                position: absolute;
+                top:10px;
+                right: 10px;
+                cursor: pointer;
+            }
+
+            h2.rhs_title {
+                font-family: montserrat;
+                font-weight: 600;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .rhs_sub_section {
+                margin-top: 4em;
+
+                h4.sub_section_title {
+                    font-family: montserrat;
+                    font-weight: 500;
+                    font-size: 15px;
+                    margin-bottom: 15px;
+                }
+                .members_images_div {
+                    margin-top: 15px;
+                    img {
+                        min-width: 50px;
+                        min-height: 50px;
+                        max-width: 50px;
+                        max-height: 50px;
+                        border-radius: 50px;
+                        background-color: #BFBFBF;
+                        margin-right: 15px;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .projects_div {
+                    .project {
+                        display: inline-block;
+                        font-size: 12px;
+                        font-family: "open sans";
+                        font-weight: 600;
+                        color: #000;
+                        background-color: #E3E3E3;
+                        padding: 4px 12px;
+                        margin-right: 5px;
+                        margin-bottom: 10px;
+
+                        &.active {
+                            background-color: #EE6262;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .project_summary {
+                    font-size: 13px;
+                    margin: 20px 0px;
+                    margin-bottom: 40px;
+                }
+
+                .individual_project_table {
+                    table {
+                        width: 100%;
+                    }
+                    thead {
+                        background-color: #F2F2F2;
+                        
+                    }
+                    th {
+                        font-size: 13px;
+                        padding: 10px 10px;
+                    }
+
+                    td {
+                        font-size: 12px;
+                        padding: 12px 10px;
+                    }
+
+                    tbody {
+                        tr>td:first-child {
+                            font-weight: 700;
+                            color: #123A79;
+                        }
+                    }
+                }
+                
+            }
         }
     }/* Timeline RHS */
 
