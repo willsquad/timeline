@@ -270,22 +270,14 @@ button {
                     }
                 }
 
-                /* position: absolute;
-                height: 40px;
-                width: 50px;
-                background: transparent;
-                border-left: 2px solid #666;
-                top: 95px;
-                display: none; */
-
                 &.one {
                     left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
                 }
                 &.two {
-                    left: (($timeline_month_width/30)*15) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
+                    left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
                 }
                 &.three {
-                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
+                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
                 }
 
                 .flag {
@@ -296,7 +288,6 @@ button {
                     border-top: 12px solid transparent;
                     border-bottom: 12px solid transparent;
                     border-left: 24px solid #888;
-                    //bottom: 0px;
                     position: absolute;
                     
                     &.one{
@@ -337,56 +328,33 @@ button {
                 }
             }
 
-            .milestone_div {
-                /* position: absolute;
-                height: 85px;
-                width: 50px;
-                background: transparent;
-                border-left: 2px solid #fff;
-                top: 5px; */
-
-                position: absolute;
-                height: 40px;
-                width: 50px;
-                background: transparent;
-                border-left: 2px solid #666;
-                top: 95px;
-                display: none;
-
-                &.one {
-                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0); // 5th + January(0)
-                }
-                &.two {
-                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + February(0)
-                }
-
-                .flag {
-                    position: relative;
-                    left: 1px;
-                    width: 0; 
-                    height: 0; 
-                    border-top: 12px solid transparent;
-                    border-bottom: 12px solid transparent;
-                    border-left: 24px solid #888;
-                    bottom: 0px;
-                    position: absolute;
-                    
-                    &.one{
-                        border-left: 24px solid #4A86E8;
-                    }
-                    &.two{
-                        border-left: 24px solid #8FD285;
-                    }
-                    
-                }
-
-            }
-
         }
 
         &__content {
             height: calc(#{$timeline_div_height} - (#{$timeline_top_bar_height} + 20px));
             padding-top: $content_padding_top;
+
+
+            .milestone_grid {
+                position: absolute;
+                height: 100%;
+                //width: 50px;
+                background: transparent;
+                border-left: 1px solid #E1E1E1;
+                top: 0px;
+
+                &.one {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
+                }
+                &.two {
+                    left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
+                }
+                &.three {
+                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                }
+            }
+
+
             .graph_bar_div {
                 height: $timeline_lhs_menu_element_height;
                 display: flex;
