@@ -39,15 +39,27 @@
                                             <div>Team 1</div>
                                             <div class="icon"><i class="material-icons">arrow_drop_down</i></div>
                                         </div>
+
+                                        <div class="timeline_lhs__menu__menu_element__project_container">
+                                            <div class="project_name">Project A</div>
+                                            <div class="project_name">Project B</div>
+                                            <div class="project_name">Project C</div>
+                                        </div>  
                                     </div>
                                     <div class="timeline_lhs__menu__menu_element">
                                         <div class="timeline_lhs__menu__menu_element__team_container">
                                             <div>Team 2</div>
                                             <div class="icon"><i class="material-icons">arrow_drop_down</i></div>
                                         </div>
+
+                                        <div class="timeline_lhs__menu__menu_element__project_container">
+                                            <div class="project_name">Project A</div>
+                                            <div class="project_name">Project B</div>
+                                            <div class="project_name">Project C</div>
+                                        </div>  
                                     </div>
                                     <div class="timeline_lhs__menu__menu_element">
-                                        <div class="timeline_lhs__menu__menu_element__team_container project_active">
+                                        <div class="timeline_lhs__menu__menu_element__team_container">
                                             <div>Team 3</div>
                                             <div class="icon"><i class="material-icons">arrow_drop_down</i></div>
                                         </div>
@@ -116,25 +128,71 @@
                                     <div class="milestone_grid two"></div>
                                     <div class="milestone_grid three"></div>
 
-                                    <div class="graph_bar_div">
-                                        <div class="graph_bar blue"></div>
+                                    <div class="graph_bar_container">
+                                            <div id="bar_div_1" class="graph_bar_div">
+                                                <div class="graph_bar blue"></div>
+                                            </div>
+                                            <div id="circle_div_1" class="graph_circle_div">
+                                                <div class="graph_circle_div__collapse graph_collapse_js" data-circlevalue="1" data-barvalue="1">
+                                                    <i class="material-icons">arrow_drop_up</i>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar red one" data-task="Task 1A"><div class="text">Task 1A</div></div>
+                                                    <div class="graph_task_click_js graph_bar red two" data-task="Task 2B"><div class="text">Task 2B</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar purple one" data-task="Task 2A"><div class="text">Task 2A</div></div>
+                                                    <div class="graph_task_click_js graph_bar purple two" data-task="Task 3A"><div class="text">Task 3A</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar darkpurple one" data-task="Task 4A"><div class="text">Task 4A</div></div>
+                                                    <div class="graph_task_click_js graph_bar darkpurple two" data-task="Task 5B"><div class="text">Task 5B</div></div>
+                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="graph_bar_div">
-                                        <div class="graph_bar green"></div>
+                                    <div class="graph_bar_container">
+                                            <div id="bar_div_2" class="graph_bar_div">
+                                                <div class="graph_bar green"></div>
+                                            </div>
+                                            <div id="circle_div_2" class="graph_circle_div">
+                                                <div class="graph_circle_div__collapse graph_collapse_js" data-circlevalue="2" data-barvalue="2">
+                                                    <i class="material-icons">arrow_drop_up</i>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar red one" data-task="Task 1A"><div class="text">Task 1A</div></div>
+                                                    <div class="graph_task_click_js graph_bar red two" data-task="Task 2B"><div class="text">Task 2B</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar purple one" data-task="Task 2A"><div class="text">Task 2A</div></div>
+                                                    <div class="graph_task_click_js graph_bar purple two" data-task="Task 3A"><div class="text">Task 3A</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar darkpurple one" data-task="Task 4A"><div class="text">Task 4A</div></div>
+                                                    <div class="graph_task_click_js graph_bar darkpurple two" data-task="Task 5B"><div class="text">Task 5B</div></div>
+                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="graph_circle_div">
-                                        <div class="graph_bar_div">
-                                            <div class="graph_task_click_js graph_bar red one" data-task="Task 1A"><div class="text">Task 1A</div></div>
-                                            <div class="graph_task_click_js graph_bar red two" data-task="Task 2B"><div class="text">Task 2B</div></div>
-                                        </div>
-                                        <div class="graph_bar_div">
-                                            <div class="graph_task_click_js graph_bar purple one" data-task="Task 2A"><div class="text">Task 2A</div></div>
-                                            <div class="graph_task_click_js graph_bar purple two" data-task="Task 3A"><div class="text">Task 3A</div></div>
-                                        </div>
-                                        <div class="graph_bar_div">
-                                            <div class="graph_task_click_js graph_bar darkpurple one" data-task="Task 4A"><div class="text">Task 4A</div></div>
-                                            <div class="graph_task_click_js graph_bar darkpurple two" data-task="Task 5B"><div class="text">Task 5B</div></div>
-                                        </div>
+                                    <div class="graph_bar_container">
+                                            <div id="bar_div_3" class="graph_bar_div">
+                                                <div class="graph_bar red"></div>
+                                            </div>
+                                            <div id="circle_div_3" class="graph_circle_div">
+                                                <div class="graph_circle_div__collapse graph_collapse_js" data-circlevalue="3" data-barvalue="3">
+                                                    <i class="material-icons">arrow_drop_up</i>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar red one" data-task="Task 1A"><div class="text">Task 1A</div></div>
+                                                    <div class="graph_task_click_js graph_bar red two" data-task="Task 2B"><div class="text">Task 2B</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar purple one" data-task="Task 2A"><div class="text">Task 2A</div></div>
+                                                    <div class="graph_task_click_js graph_bar purple two" data-task="Task 3A"><div class="text">Task 3A</div></div>
+                                                </div>
+                                                <div class="graph_bar_div">
+                                                    <div class="graph_task_click_js graph_bar darkpurple one" data-task="Task 4A"><div class="text">Task 4A</div></div>
+                                                    <div class="graph_task_click_js graph_bar darkpurple two" data-task="Task 5B"><div class="text">Task 5B</div></div>
+                                                </div>
+                                            </div>
                                     </div>
 
                                     <!-- <div class="timeline_rhs__content__overlay"></div> -->

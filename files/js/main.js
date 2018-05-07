@@ -25,5 +25,33 @@ $(document).ready(function() {
         $('.project_summary').html(project_sumamry);
     });
 
-    
+    /* Graph Bar Click */
+    $(document).on('click', '.graph_bar', function(){
+        var self = $(this);
+        self.closest('.graph_bar_div').addClass('hide');
+        self.parent().parent().find('.graph_circle_div').addClass('show')
+    });
+
+    /* Graph Collapse */
+    $(document).on('click', '.graph_collapse_js', function(){
+        var self = $(this);
+        var circle_div_value = self.attr('data-circlevalue');
+        var bar_div_value = self.attr('data-barvalue');
+
+        
+        $('#circle_div_'+circle_div_value).toggleClass('show');
+        $('#bar_div_'+bar_div_value).toggleClass('hide');
+    });
+
+
+    /* LHS Click */
+    $(document).on('click', '.timeline_lhs__menu__menu_element', function(){
+        var self = $(this);
+
+        self.find('.timeline_lhs__menu__menu_element__team_container').toggleClass('project_active');
+        self.find('.timeline_lhs__menu__menu_element__project_container').toggleClass('show');
+        
+
+    });
+
 });

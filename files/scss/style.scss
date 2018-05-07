@@ -248,6 +248,10 @@ button {
                 justify-content: space-between;
                 cursor: pointer;
 
+                &.active {
+
+                }
+
 
                 &__team_container {
                     display: flex;
@@ -276,6 +280,12 @@ button {
                     border-left: 1px solid #d5d5d5;
                     //padding: 0px 15px;
                     padding: $padding_top_bottom 15px;
+                    display: none;
+                    transition: all 0.3s ease;
+
+                    &.show {
+                        display: block;
+                    }
 
                     .project_name {
                         //padding: 20px 0px;
@@ -440,6 +450,10 @@ button {
                     position: absolute; 
                 } */
 
+                &.hide {
+                    display: none;
+                }
+
                 .graph_bar {
                     
                     
@@ -461,8 +475,8 @@ button {
                     }
                     &.red {
                         background-color: #F48786;
-                        width: (($timeline_month_width/30)*15) + ($timeline_month_width*3); //(15 days and 3 months)
-                        left: (($timeline_month_width/30)*5) + ($timeline_month_width*4); // 5th + February(0)
+                        width: (($timeline_month_width/30)*30) + ($timeline_month_width*3); //(15 days and 3 months)
+                        left: (($timeline_month_width/30)*25) + ($timeline_month_width*1); // 5th + February(0)
                     }
 
                     
@@ -479,6 +493,29 @@ button {
 
                 flex-direction: column;
                 box-sizing: content-box;
+
+                display: none;
+                transition: all 0.3s ease;
+
+                &.show {
+                    display: block;
+                }
+
+                &__collapse {
+                    position: absolute;
+                    margin-left: 15px;
+                    background-color: #132645;
+                    padding: 0px;
+                    z-index: 1000;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    i{
+                        font-size: 36px;
+                        color: #fff;
+                        display: flex;
+                    }
+                }
 
                 .graph_bar_div {
                     height: $timeline_menu_project_name_height;
