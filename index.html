@@ -148,6 +148,7 @@
 
                                     <h2 class="rhs_title">Team 3</h2>
 
+                                    <!-- Project Members -->
                                     <div class="rhs_sub_section members">
                                         <h4 class="sub_section_title">Members:</h4>
                                         <div class="members_images_div">
@@ -158,21 +159,23 @@
                                         </div>
                                     </div>
 
+                                    <!-- Project Name Tabs -->
                                     <div class="rhs_sub_section projects">
                                         <h4 class="sub_section_title">Projects:</h4>
                                         <div class="projects_div">
-                                            <div class="project active">Project A</div>
-                                            <div class="project">Project B</div>
-                                            <div class="project">Project C</div>
+                                            <div class="project rhs_project_tab_js active" data-project="a" data-summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ullam.">Project A</div>
+                                            <div class="project rhs_project_tab_js" data-project="b" data-summary="Lorem adipisicing elit. Voluptatibus,  ipsum dolor sit amet consectetur quos.">Project B</div>
+                                            <div class="project rhs_project_tab_js" data-project="c" data-summary="Voluptatibus Lorem ipsum dolor sit consectetur quos amet.">Project C</div>
                                         </div>
                                     </div>
 
+                                    <!-- Project Details -->
                                     <div class="rhs_sub_section individual_project">
-                                        <h4 class="sub_section_title individual_project_name">Project A:</h4>
+                                        <h4 class="sub_section_title individual_project_name">Project <span id="project_name_title">A</span>:</h4>
 
                                         <div class="individual_project_details">
                                             <div class="project_summary">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ullam.
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ullam.           
                                             </div>
 
                                             <div class="individual_project_table">
@@ -185,7 +188,7 @@
                                                             <th>Duration</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="a" class="project_task_tbody_js active">
                                                         <tr>
                                                             <td>Task 1A</td>
                                                             <td>28/02/2018</td> 
@@ -198,7 +201,9 @@
                                                             <td>28/03/2018</td>
                                                             <td>7 Days</td>
                                                         </tr>
-                                                        <!-- <tr>
+                                                    </tbody>
+                                                    <tbody id="b" class="project_task_tbody_js">
+                                                        <tr>
                                                             <td>Task 2A</td>
                                                             <td>3/03/2018</td> 
                                                             <td>7/03/2018</td>
@@ -210,6 +215,8 @@
                                                             <td>13/03/2018</td>
                                                             <td>5 Days</td>
                                                         </tr>
+                                                    </tbody>
+                                                    <tbody id="c" class="project_task_tbody_js">
                                                         <tr>
                                                             <td>Task 4A</td>
                                                             <td>14/03/2018</td> 
@@ -221,7 +228,7 @@
                                                             <td>29/03/2018</td> 
                                                             <td>10/04/2018</td>
                                                             <td>12 Days</td>
-                                                        </tr> -->
+                                                        </tr>
                                                     </tbody>
                                                     
                                                 </table>
@@ -241,7 +248,7 @@
                 </div>
                 <!-- TIMELINE DIV  -->
             </div>
-            <!-- TIMELINE CONTENT DIV  -->
+            <!-- TIMELINE CONTENT DIV  --> 
         </div>
         <!-- END OF MAIN ROW -->
     </div>
@@ -251,5 +258,9 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="files/js/main.js"></script>
+<script src="files/js/time.js"></script>
+<script>
+    console.log(time.months[1].nickname);
+</script>
 
 </html>

@@ -475,7 +475,7 @@ button {
                 align-items: center;
                 background-color: #F2F2F2;
                 box-shadow: inset 0px 0px 20px rgba(172, 172, 172, 0.2);
-                padding: $padding_top_bottom 15px;
+                padding: $padding_top_bottom 0px;
 
                 flex-direction: column;
                 box-sizing: content-box;
@@ -522,30 +522,30 @@ button {
                             background-color: #F48786;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*1.5); // 5th + January(0)
+                                left: (($timeline_month_width/30)*25) + ($timeline_month_width*1); // 5th + Feb(1)
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*4.5); // 5th + February(0)
+                                left: (($timeline_month_width/30)*0) + ($timeline_month_width*4); // 5th + May(4)
                             }
                         }         
                         &.purple {
                             background-color: #9D9DF5;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2.5); // 5th + January(0)
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + January(0)
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*3.5); // 5th + February(0)
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*3); // 5th + February(0)
                             }
                         }         
                         &.darkpurple {
                             background-color: #B171CE;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + January(0)
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + March(2)
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*5); // 5th + February(0)
+                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*5); // 5th + June(5)
                             }
                         }         
                     }
@@ -617,6 +617,8 @@ button {
                         padding: 4px 12px;
                         margin-right: 5px;
                         margin-bottom: 10px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
 
                         &.active {
                             background-color: #EE6262;
@@ -629,6 +631,10 @@ button {
                     font-size: 13px;
                     margin: 20px 0px;
                     margin-bottom: 40px;
+                }
+
+                #project_name_title {
+                    text-transform: uppercase;
                 }
 
                 .individual_project_table {
@@ -650,11 +656,17 @@ button {
                     }
 
                     tbody {
+                        display: none;
                         tr>td:first-child {
                             font-weight: 700;
                             color: #123A79;
                         }
+
+                        &.active {
+                            display: table-row-group;
+                        }
                     }
+                    
                 }
                 
             }
