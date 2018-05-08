@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     /* Closing the RHS Div */
     $(document).on('click', '.close_rhs', function(){
-        $('.timeline_rhs__sliding_rhs_div').addClass('animated slideOutRight');
+        $('.timeline_rhs__sliding_rhs_div').removeClass('show').addClass('animated slideOutRight');
     });
 
     /* Clicking the project Tabs */
@@ -28,8 +28,16 @@ $(document).ready(function() {
     /* Graph Bar Click */
     $(document).on('click', '.graph_bar', function(){
         var self = $(this);
+        var barvalue = self.attr('data-barvalue');
+
         self.closest('.graph_bar_div').addClass('hide');
-        self.parent().parent().find('.graph_circle_div').addClass('show')
+        self.parent().parent().find('.graph_circle_div').addClass('show');
+
+        /* click the LHS menu element */
+        $('#menu_div_'+barvalue).click();
+
+        $('.timeline_rhs__sliding_rhs_div').removeClass('animated slideOutRight').addClass('show');
+        $('.rhs_title').html('Team '+barvalue);
     });
 
     /* Graph Collapse */
@@ -41,16 +49,36 @@ $(document).ready(function() {
         
         $('#circle_div_'+circle_div_value).toggleClass('show');
         $('#bar_div_'+bar_div_value).toggleClass('hide');
+
+        /* click the LHS menu element if it has already been opened */
+        if($('#menu_div_'+bar_div_value).hasClass('show'))  {
+            $('#menu_div_'+bar_div_value).click();
+        }
+        
+        // if there are no more task divs open
+        if($('.graph_circle_div.show').length == 0) {
+            $('.close_rhs').click();
+        }
+        //$('.close_rhs').click();
     });
 
 
     /* LHS Click */
     $(document).on('click', '.timeline_lhs__menu__menu_element', function(){
         var self = $(this);
+        var barvalue = self.attr('data-barvalue');
 
         self.find('.timeline_lhs__menu__menu_element__team_container').toggleClass('project_active');
         self.find('.timeline_lhs__menu__menu_element__project_container').toggleClass('show');
+
+        self.toggleClass('show');
         
+        /* click the RHS Bars */
+       /*  $('#bar_'+barvalue).closest('.graph_bar_div').toggleClass('hide');
+        $('#bar_'+barvalue).parent().parent().find('.graph_circle_div').toggleClass('show'); */
+
+        /* $('#circle_div_'+barvalue).toggleClass('show');
+        $('#bar_div_'+barvalue).toggleClass('hide'); */
 
     });
 

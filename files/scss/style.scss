@@ -516,15 +516,16 @@ button {
                     position: absolute;
                     margin-left: 15px;
                     //background-color: #132645;
-                    background-color: #212121;
+                    background-color: #fff;
                     padding: 0px;
                     z-index: 1000;
                     border-radius: 4px;
                     cursor: pointer;
+                    box-shadow: 0px 0px 8px 0px rgba(44, 44, 44, 0.35);
 
                     i{
                         font-size: 36px;
-                        color: #fff;
+                        color: #000;
                         display: flex;
                     }
                 }
@@ -616,6 +617,13 @@ button {
             padding-top: 40px;
             height: 100%;
             overflow: auto;
+            //display: none;
+            transition: all 0.5s ease;
+           transform: translate3d(100%, 0, 0);
+
+            &.show {
+                transform: translate3d(0%, 0, 0);
+            }
             
             .close_rhs {
                 float: right;
