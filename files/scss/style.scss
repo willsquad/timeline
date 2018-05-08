@@ -212,8 +212,8 @@ button {
             justify-content: center;
             //border-bottom: 1px solid #D5D5D5;
 
-            background-color: #132645;
-            color: #fff;
+            //background-color: #132645;
+            //color: #fff;
 
             h2 {
                 font-family: montserrat;
@@ -234,7 +234,8 @@ button {
             min-height: $timeline_div_height - 25px;
             padding-top: $content_padding_top;
             //margin-bottom: 30px;
-            box-shadow: 5px 0px 15px -4px rgba(125, 125, 125, 0.25);
+            //box-shadow: 5px 0px 15px -4px rgba(125, 125, 125, 0.25);
+            box-shadow: 5px 5px 15px -4px rgba(125, 125, 125, 0.25);
 
             &__menu_element {
                 min-height: $timeline_lhs_menu_element_height;
@@ -279,7 +280,7 @@ button {
                     text-align: right;
                     border-left: 1px solid #d5d5d5;
                     //padding: 0px 15px;
-                    padding: $padding_top_bottom 15px;
+                    padding: $menu_project_graph_circle_div_padding_top_bottom 15px;
                     display: none;
                     transition: all 0.3s ease;
 
@@ -321,64 +322,10 @@ button {
             height: $timeline_top_bar_height - 10px;
             min-width: 100% !Important;
             padding: 0px 15px;
-            
-
-            .milestone_div {
-                position: absolute;
-                height: $timeline_top_bar_height - 15px;
-                //width: 50px;
-                background: transparent;
-                border-left: 2px solid #000;
-                top: 5px;
-
-                .text {
-                    font-size: 13px;
-                    font-weight: 700;
-                    margin-left: 35px;
-
-                    .date {
-                        font-weight: 400;
-                        font-size: 12px;
-                    }
-                }
-
-                &.one {
-                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
-                }
-                &.two {
-                    left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
-                }
-                &.three {
-                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
-                }
-
-                .flag {
-                    position: relative;
-                    left: 1px;
-                    width: 0; 
-                    height: 0; 
-                    border-top: 12px solid transparent;
-                    border-bottom: 12px solid transparent;
-                    border-left: 24px solid #888;
-                    position: absolute;
-                    
-                    &.one{
-                        border-left: 24px solid #4A86E8;
-                    }
-                    &.two{
-                        border-left: 24px solid #8FD285;
-                    }
-                    &.three{
-                        border-left: 24px solid #9D9DF5;
-                    }
-                    
-                }
-
-            }
         }
 
         &__top_bar {
-            background-color: #162F57;
+            background-color: $timeline_top_bar_bgcolor;
             height: $timeline_top_bar_height;
             color: #fff;
             display: flex;
@@ -387,7 +334,7 @@ button {
                 min-width: $timeline_month_width;
                 display: flex;
                 align-items: center;
-                background-color: #162F57;
+                background-color: $timeline_top_bar_bgcolor;
                 padding-left: 15px;
                 
                 &::before {
@@ -406,6 +353,66 @@ button {
             //height: calc(#{$timeline_div_height} - (#{$timeline_top_bar_height} + 20px));
             //min-height: $timeline_div_height - 40px;
             padding-top: $content_padding_top;
+            min-height: 600px;
+
+            .milestone_div {
+                position: absolute;
+                //height: $timeline_top_bar_height - 15px;
+                //width: 50px;
+                background: transparent;
+                //border-left: 2px solid #000;
+                top: 25px;
+
+                display: flex;
+                align-items: center;
+
+                .text {
+                    font-size: 13px;
+                    font-weight: 700;
+                    margin-left: 35px;
+
+                    .date {
+                        font-weight: 400;
+                        font-size: 11px;
+                    }
+                }
+
+                &.one {
+                    left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
+                }
+                &.two {
+                    left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
+                }
+                &.three {
+                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                }
+
+                .flag {
+                    position: relative;
+                    left: 1px;
+                    width: 0; 
+                    height: 0; 
+                    border-top: 8px solid transparent;
+                    border-bottom: 8px solid transparent;
+                    border-left: 16px solid $milestone_flag_color;
+                    position: absolute;
+                    
+                    /* &.one{
+                        //border-left: 24px solid $blue;
+                        border-left: 24px solid $milestone_flag_color;
+                    }
+                    &.two{
+                        //border-left: 24px solid $green;
+                        border-left: 24px solid $milestone_flag_color;
+                    }
+                    &.three{
+                        //border-left: 24px solid $darkpurple;
+                        border-left: 24px solid $milestone_flag_color;
+                    } */
+                    
+                }
+
+            }
 
 
             .milestone_grid {
@@ -414,7 +421,8 @@ button {
                 //width: 50px;
                 background: transparent;
                 border-left: 1px solid #E1E1E1;
-                top: 0px;
+                //top: 0px;
+                top: 35px;
 
                 &.one {
                     left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
@@ -464,17 +472,20 @@ button {
                     
 
                     &.blue {
-                        background-color: #4A86E8;
+                        //background-color: #4A86E8;
+                        background-color: $blue;
                         width: (($timeline_month_width/30)*2) + ($timeline_month_width*2); //(2 days and 2 months)
                         left: (($timeline_month_width/30)*5) + ($timeline_month_width*0); // 5th + January(0)
                     }
                     &.green {
-                        background-color: #8FD285;
+                        //background-color: #8FD285;
+                        background-color: $green;
                         width: (($timeline_month_width/30)*15) + ($timeline_month_width*3); //(15 days and 3 months)
                         left: (($timeline_month_width/30)*5) + ($timeline_month_width*1); // 5th + February(0)
                     }
                     &.red {
-                        background-color: #F48786;
+                        //background-color: #F48786;
+                        background-color: $red;
                         width: (($timeline_month_width/30)*30) + ($timeline_month_width*3); //(15 days and 3 months)
                         left: (($timeline_month_width/30)*25) + ($timeline_month_width*1); // 5th + February(0)
                     }
@@ -489,7 +500,7 @@ button {
                 align-items: center;
                 background-color: #F2F2F2;
                 box-shadow: inset 0px 0px 20px rgba(172, 172, 172, 0.2);
-                padding: $padding_top_bottom 0px;
+                padding: $menu_project_graph_circle_div_padding_top_bottom 0px;
 
                 flex-direction: column;
                 box-sizing: content-box;
@@ -504,7 +515,8 @@ button {
                 &__collapse {
                     position: absolute;
                     margin-left: 15px;
-                    background-color: #132645;
+                    //background-color: #132645;
+                    background-color: #212121;
                     padding: 0px;
                     z-index: 1000;
                     border-radius: 4px;
@@ -550,13 +562,11 @@ button {
                     }
     
                         &.blue {
-                            background-color: #4A86E8;
-                            //width: (($timeline_month_width/30)*2) + ($timeline_month_width*2); //(2 days and 2 months)
-                            
-                            
+                            background-color: $blue;
+                            //width: (($timeline_month_width/30)*2) + ($timeline_month_width*2); //(2 days and 2 months)      
                         }  
                         &.red {
-                            background-color: #F48786;
+                            background-color: $red;
                             
                             &.one {
                                 left: (($timeline_month_width/30)*25) + ($timeline_month_width*1); // 5th + Feb(1)
@@ -566,7 +576,8 @@ button {
                             }
                         }         
                         &.purple {
-                            background-color: #9D9DF5;
+                            //background-color: #9D9DF5;
+                            background-color: $purple;
                             
                             &.one {
                                 left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + January(0)
@@ -576,7 +587,8 @@ button {
                             }
                         }         
                         &.darkpurple {
-                            background-color: #B171CE;
+                            //background-color: #B171CE;
+                            background-color: $darkpurple;
                             
                             &.one {
                                 left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + March(2)

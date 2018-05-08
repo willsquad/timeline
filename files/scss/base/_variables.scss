@@ -13,23 +13,35 @@
     position: relative;
 }
 
-$timeline_div_container_bg: #eaeaea;
 
+/*** Colors ***/
+$timeline_div_container_bg: #eaeaea;
+//$timeline_top_bar_bgcolor: #162F57;
+$timeline_top_bar_bgcolor: #212121;
+
+$milestone_flag_color: #162F57;
+
+$blue: #2196F3;
+$red: #FF7043;
+$green: #8BC34A;
+$purple: #9575CD;
+$darkpurple: #AB47BC;
+
+
+/*** Colors ***/
+
+
+/*** Lenghts ***/
 $timeline_div_height: 700px;
 $timeline_lhs_width: 300px;
-
 $timeline_top_bar_height: 95px;
 $timeline_month_width: 150px;
-
-
 $timeline_lhs_menu_element_height: 90px;
 $timeline_menu_project_name_height: 90px;
-
 $timeline_graph_circle_width: 45px;
-
-$padding_top_bottom: 15px;
-
-$content_padding_top: 15px;
+$menu_project_graph_circle_div_padding_top_bottom: 15px;
+$content_padding_top: 75px;
+/*** Lenghts ***/
 
 
 /********* BOOTSTRAP MEDIA-QUERY MIXINS ********* Media Breakpoint  DUBO: down, up, between, only ************
