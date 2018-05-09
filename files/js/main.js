@@ -30,35 +30,44 @@ $(document).ready(function() {
         var self = $(this);
         var barvalue = self.attr('data-barvalue');
 
-        self.closest('.graph_bar_div').addClass('hide');
-        self.parent().parent().find('.graph_circle_div').addClass('show');
+        /* self.closest('.graph_bar_div').addClass('hide');
+        self.parent().parent().find('.graph_circle_div').addClass('show'); */
 
         /* click the LHS menu element */
         $('#menu_div_'+barvalue).click();
 
+        /* $('#circle_div_'+barvalue).toggleClass('show');
+        $('#bar_div_'+barvalue).toggleClass('hide');
+
         $('.timeline_rhs__sliding_rhs_div').removeClass('animated slideOutRight').addClass('show');
-        $('.rhs_title').html('Team '+barvalue);
+        $('.rhs_team_title').html('Team '+barvalue);
+
+        $('.team_section_rhs').removeClass('hide');
+        $('.task_section_rhs').removeClass('show'); */
     });
 
     /* Graph Collapse */
     $(document).on('click', '.graph_collapse_js', function(){
         var self = $(this);
-        var circle_div_value = self.attr('data-circlevalue');
-        var bar_div_value = self.attr('data-barvalue');
+        var barvalue = self.attr('data-barvalue');
 
         
-        $('#circle_div_'+circle_div_value).toggleClass('show');
-        $('#bar_div_'+bar_div_value).toggleClass('hide');
+        /* click the LHS menu element */
+        $('#menu_div_'+barvalue).click();
 
-        /* click the LHS menu element if it has already been opened */
-        if($('#menu_div_'+bar_div_value).hasClass('show'))  {
-            $('#menu_div_'+bar_div_value).click();
+        
+        /* $('#circle_div_'+barvalue).toggleClass('show');
+        $('#bar_div_'+barvalue).toggleClass('hide');
+
+        /* click the LHS menu element if it has already been opened *
+        if($('#menu_div_'+barvalue).hasClass('show'))  {
+            $('#menu_div_'+barvalue).click();
         }
         
         // if there are no more task divs open
         if($('.graph_circle_div.show').length == 0) {
             $('.close_rhs').click();
-        }
+        } */
         //$('.close_rhs').click();
     });
 
@@ -72,6 +81,25 @@ $(document).ready(function() {
         self.find('.timeline_lhs__menu__menu_element__project_container').toggleClass('show');
 
         self.toggleClass('show');
+
+        var bar_div_value = self.attr('data-barvalue');
+
+        
+        $('#circle_div_'+bar_div_value).toggleClass('show');
+        $('#bar_div_'+bar_div_value).toggleClass('hide');
+
+
+        $('.timeline_rhs__sliding_rhs_div').removeClass('animated slideOutRight').addClass('show');
+        $('.rhs_team_title').html('Team '+barvalue);
+
+        $('.team_section_rhs').removeClass('hide');
+        $('.task_section_rhs').removeClass('show');
+
+
+        // if there are no more task divs open
+        if($('.graph_circle_div.show').length == 0) {
+            $('.close_rhs').click();
+        }
         
         /* click the RHS Bars */
        /*  $('#bar_'+barvalue).closest('.graph_bar_div').toggleClass('hide');
@@ -80,6 +108,42 @@ $(document).ready(function() {
         /* $('#circle_div_'+barvalue).toggleClass('show');
         $('#bar_div_'+barvalue).toggleClass('hide'); */
 
+    });
+
+    /* Task Click on RHS */
+    $(document).on('click', '.task_click_js', function(){
+        var self = $(this);
+        var task_name = self.html();
+
+        $('.team_section_rhs').addClass('hide');
+        $('.task_section_rhs').addClass('show');
+
+        $('.rhs_task_title').html(task_name);
+
+        if(!$('.timeline_rhs__sliding_rhs_div').hasClass('show')) {
+            $('.timeline_rhs__sliding_rhs_div').removeClass('animated slideOutRight').addClass('show');
+        }
+    });
+
+    /* Task Click on MHS */
+    $(document).on('click', '.graph_task_click_js', function(){
+        var self = $(this);
+        var task_name = self.attr('data-task');
+
+        $('.team_section_rhs').addClass('hide');
+        $('.task_section_rhs').addClass('show');
+
+        $('.rhs_task_title').html(task_name);
+
+        if(!$('.timeline_rhs__sliding_rhs_div').hasClass('show')) {
+            $('.timeline_rhs__sliding_rhs_div').removeClass('animated slideOutRight').addClass('show');
+        }
+    });
+
+    /* Go Back from Task section */
+    $(document).on('click', '.back_rhs', function(){
+        $('.team_section_rhs').removeClass('hide');
+        $('.task_section_rhs').removeClass('show');
     });
 
 });

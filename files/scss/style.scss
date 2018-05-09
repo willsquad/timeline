@@ -501,7 +501,7 @@ button {
                 display: flex;
                 align-items: center;
                 background-color: #F2F2F2;
-                box-shadow: inset 0px 0px 20px rgba(172, 172, 172, 0.2);
+                //box-shadow: inset 0px 0px 20px rgba(172, 172, 172, 0.2);
                 padding: $menu_project_graph_circle_div_padding_top_bottom 0px;
 
                 flex-direction: column;
@@ -546,7 +546,7 @@ button {
                         position: absolute; 
                     }
     
-                    .graph_bar {
+                    .graph_bar_circle {
                         position: relative;
                         width: $timeline_graph_circle_width;
                         height: $timeline_graph_circle_width;
@@ -630,12 +630,20 @@ button {
             .close_rhs {
                 float: right;
                 position: absolute;
-                top:10px;
-                right: 10px;
+                top:25px;
+                right: 25px;
                 cursor: pointer;
             }
 
-            h2.rhs_title {
+            .back_rhs {
+                float: right;
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                cursor: pointer;
+            }
+
+            h2.rhs_team_title, h2.rhs_task_title {
                 font-family: montserrat;
                 font-weight: 600;
                 font-size: 20px;
@@ -688,7 +696,7 @@ button {
 
                 .project_summary {
                     font-size: 13px;
-                    margin: 20px 0px;
+                    margin: 10px 0px;
                     margin-bottom: 40px;
                 }
 
@@ -714,6 +722,10 @@ button {
                         padding: 12px 10px;
                     }
 
+                    .task_click_js {
+                        cursor: pointer;
+                    } 
+
                     tbody {
                         display: none;
                         tr>td:first-child {
@@ -728,6 +740,31 @@ button {
                     
                 }
                 
+            }
+
+            .team_section_rhs {
+                &.hide {
+                    display: none;
+                }
+                &.show {
+                    display: block;
+                }
+            }
+
+            .task_section_rhs {
+                display: none;
+                &.show {
+                    display: block;
+                }
+                &.hide {
+                    display: none;
+                }
+
+                .task_summary {
+                    font-size: 13px;
+                    margin: 10px 0px;
+                    margin-bottom: 40px;
+                }
             }
         }
     }/* Timeline RHS */
