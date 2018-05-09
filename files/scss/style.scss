@@ -177,9 +177,10 @@ button {
     background-color: $timeline_div_container_bg;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    //align-items: center;
     height: auto;
-    padding: 50px 0px;
+    //padding: 50px 0px;
+    padding: 0px;
 }
 
 #timeline_div {
@@ -231,11 +232,12 @@ button {
         &__menu {
             padding: 0px 10px;
             //min-height: calc(#{$timeline_div_height} - #{$timeline_top_bar_height});
-            min-height: $timeline_div_height - 25px;
+            //min-height: $timeline_div_height - 25px;
             padding-top: $content_padding_top;
             //margin-bottom: 30px;
             //box-shadow: 5px 0px 15px -4px rgba(125, 125, 125, 0.25);
             box-shadow: 5px 5px 15px -4px rgba(125, 125, 125, 0.25);
+            min-height: calc(100vh - #{$timeline_top_bar_height});
 
             &__menu_element {
                 min-height: $timeline_lhs_menu_element_height;
@@ -465,7 +467,7 @@ button {
                 .graph_bar {
                     
                     
-                    height: 45px;
+                    height: $graph_bar_height;
                     border-radius: 50px;
                     position: relative;
                     cursor: pointer;
@@ -554,11 +556,11 @@ button {
   
                     .text {
                         position: absolute;
-                        top: 50px;
+                        top: 35px;
                         font-size: 11px;
                         font-weight: 600;
                         font-family: "open sans";
-                        left: 2px;
+                        left: -5px;
                         width: 150%;
                     }
     
