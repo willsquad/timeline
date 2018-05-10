@@ -379,14 +379,17 @@ button {
                     }
                 }
 
-                &.one {
+                &.start {
                     left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
                 }
-                &.two {
+                &.one {
                     left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
                 }
-                &.three {
-                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                &.two {
+                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*3) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                }
+                &.end {
+                    left: (($timeline_month_width/30)*25) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
                 }
 
                 .flag {
@@ -399,6 +402,12 @@ button {
                     border-left: 16px solid $milestone_flag_color;
                     position: absolute;
                     
+                    &.start {
+                        border-left-color: #2196F3;
+                    }
+                    &.end {
+                        border-left-color: #FF7043;
+                    }
                     /* &.one{
                         //border-left: 24px solid $blue;
                         border-left: 24px solid $milestone_flag_color;
@@ -426,14 +435,17 @@ button {
                 //top: 0px;
                 top: 35px;
 
-                &.one {
+                &.start {
                     left: (($timeline_month_width/30)*5) + ($timeline_month_width*0) + 15px; // 5th + January(0) + 15px for the left padding (due to absolute positioning)
                 }
-                &.two {
+                &.one {
                     left: (($timeline_month_width/30)*12) + ($timeline_month_width*2) + 15px; // 15th + March(2) + 15px for the left padding (due to absolute positioning)
                 }
-                &.three {
-                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                &.two {
+                    left: (($timeline_month_width/30)*29) + ($timeline_month_width*3) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
+                }
+                &.end {
+                    left: (($timeline_month_width/30)*25) + ($timeline_month_width*5) + 15px; // 15th + June(5) + 15px for the left padding (due to absolute positioning)
                 }
             }
 
