@@ -293,7 +293,7 @@ button {
                     .project_name {
                         //padding: 20px 0px;
                         //padding-right: 20px;
-                        font-size: 14px;
+                        font-size: 13px;
                         height: $timeline_menu_project_name_height;
                         display: flex;
                         align-items: center;
@@ -559,7 +559,7 @@ button {
                     }
     
                     .graph_bar_circle {
-                        position: relative;
+                        position: absolute;
                         width: $timeline_graph_circle_width;
                         height: $timeline_graph_circle_width;
                         border-radius: 50px;
@@ -577,39 +577,71 @@ button {
                     }
     
                         &.blue {
-                            background-color: $blue;
-                            //width: (($timeline_month_width/30)*2) + ($timeline_month_width*2); //(2 days and 2 months)      
-                        }  
-                        &.red {
-                            background-color: $red;
+                            background-color: $task_blue;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*25) + ($timeline_month_width*1); // 5th + Feb(1)
+                                left: ((($timeline_month_width/30)*25) + ($timeline_month_width*1)) + 15px;; // 5th + Feb(1)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*0) + ($timeline_month_width*4); // 5th + May(4)
+                                left: ((($timeline_month_width/30)*0) + ($timeline_month_width*4)) + 15px;; // 5th + May(4)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                         }         
                         &.purple {
                             //background-color: #9D9DF5;
-                            background-color: $purple;
+                            background-color: $task_purple;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + January(0)
+                                left: ((($timeline_month_width/30)*5) + ($timeline_month_width*2)) + 15px;; // 5th + January(0)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*3); // 5th + February(0)
+                                left: ((($timeline_month_width/30)*5) + ($timeline_month_width*3)) + 15px;; // 5th + February(0)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                         }         
                         &.darkpurple {
                             //background-color: #B171CE;
-                            background-color: $darkpurple;
+                            background-color: $task_darkpurple;
                             
                             &.one {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*2); // 5th + March(2)
+                                left: ((($timeline_month_width/30)*5) + ($timeline_month_width*2)) + 15px;; // 5th + March(2)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                             &.two {
-                                left: (($timeline_month_width/30)*5) + ($timeline_month_width*5); // 5th + June(5)
+                                left: ((($timeline_month_width/30)*19) + ($timeline_month_width*5)) + 15px; // 5th + June(5)
+                                &.small {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*1); //(15 days and 3 months)
+                                }
+                                &.medium {
+                                    width: (($timeline_month_width/30)*15) + ($timeline_month_width*2); //(15 days and 3 months)
+                                }
                             }
                         }         
                     }
