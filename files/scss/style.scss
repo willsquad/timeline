@@ -5,6 +5,10 @@
 body {
     background-color: #F7F7F7; //overflow-y: hidden;
     font-family: "open sans";
+
+    &.create_projects_ui {
+        background-color: #f2f2f2;
+    }
 }
 
 input {
@@ -869,9 +873,29 @@ button {
     }
 
     .dashboard_rhs {
-        background-color: #fbfbfb;
+        background-color: #f2f2f2;
         max-width: calc(100% - 300px);
         min-width: calc(100% - 300px);
+
+        .orange_button {
+            background-color: #FF4800;
+            padding: 12px 14px;
+            display: flex;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 13px;
+            align-items: center;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            text-shadow: 1px 1px 1px #0000005c;
+            text-decoration: none;
+
+            i {
+                font-size: 18px;
+                margin-right: 5px;
+            }
+        }
 
         &__top_bar {
             background-color: #fff;
@@ -879,6 +903,113 @@ button {
             color: #000;
             display: flex;
             box-shadow: rgba(0,0,0,0.1) 0px 0px 40px 0px;
+            padding: 0px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .add_project_button_div {
+
+            }
+
+            .search_projects_div {
+                i{
+                    position: absolute;
+                    top: 38px;
+                }
+                input {
+                    border: none;
+                    border-bottom: 1px solid #212121;
+                    outline:none;
+                    padding: 10px;
+                    width: 275px;
+                    padding-left: 30px;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+
+        &__content {
+            padding: 40px 20px;
+
+            .projects_page_title {
+                h2 {
+                    text-align: center;
+                    font-size: 22px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: #212121;
+                }
+            }
+
+            .dropdown {
+                position: absolute;
+                right: 20px;
+                top: 34px;
+            }
+
+            .project_div_container {
+                margin-top: 50px;
+                .project_div {
+                    width: 100%;
+                    max-width: 1000px;
+                    height: 225px;
+                    background-color: #fff;
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .top_section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .title {
+                            h3 {
+                                font-family: montserrat;
+                                font-size: 20px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .edit_delete {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .mid_section {
+                        font-size: 15px;
+                        margin-bottom: 25px;;
+                    }
+
+                    .bottom_section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .details {
+                            font-size: 14px;
+                            span {
+                                margin-right: 30px;
+                            }
+                        }
+
+                        .members {
+                            img {
+                                min-width: 40px;
+                                min-height: 40px;
+                                border-radius: 50px;
+                                background-color: #ddd;
+                                margin-left: 20px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

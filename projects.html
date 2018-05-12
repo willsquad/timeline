@@ -10,11 +10,12 @@
         </title>
         <link rel="stylesheet" href="files/css/bootstrap.css">
         <link rel="stylesheet" href="files/css/style.css">
+        <link rel="stylesheet" href="files/css/nice-select.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700|Open+Sans:300,400,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons&style=outlined"
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     </head>
-<body>
+<body class="create_projects_ui">
     <!-- START OF MAIN CONTAINER FLUID -->
     <div class="container-fluid">
         <!-- START OF MAIN ROW -->
@@ -35,7 +36,7 @@
                                 </div>
                                 <div class="timeline_lhs__menu dashboard_lhs__menu col-12">
                                     <div class="dashboard_menu_element active">
-                                        <i class="material-icons">account_balance</i> Projects
+                                        <i class="material-icons">desktop_windows</i> Projects
                                     </div>
                                     <div class="dashboard_menu_element">
                                         <i class="material-icons">settings</i> Settings
@@ -51,18 +52,86 @@
                         <!-- TIMELINE RHS -->
                         <div class="dashboard_rhs col-12 col-md-8 col-lg-9">
                             <div class="row">
-                                    <!-- <div class="timeline_rhs top_rhs col-12 col-md-8 col-lg-9">
-                                           
-                                        </div> -->
                                 <div class="col-12 dashboard_rhs__top_bar">
-                                    
+                                    <div class="add_project_button_div">
+                                        <a href="create.html" id="add_project" class="orange_button"><i class="material-icons">add</i> Add Project</a>
+                                    </div>
+                                    <div class="search_projects_div">
+                                        <i class="material-icons">search</i>
+                                        <input type="search" id="search_projects" placeholder="Search">
+                                    </div>
                                 </div>
 
-                                <div class="col-12 timeline_rhs__content">
-   
+                                <div class="col-12 timeline_rhs__content dashboard_rhs__content">
+                                    <div class="projects_page_title">
+                                        <h2>Projects</h2>
+                                    </div>
+
+                                    <div class="dropdown">
+                                        <select name="" id="">
+                                            <option value="">Newest</option>
+                                            <option value="">Oldest</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="project_div_container">
+                                        <div class="project_div">
+                                            <div class="top_section">
+                                                <div class="title">
+                                                    <h3>Project Two</h3>
+                                                </div>
+                                                <div class="edit_delete">
+                                                    Edit | Delete
+                                                </div>
+                                            </div>
+
+                                            <div class="mid_section">
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae soluta odio tempore nisi numquam a autem delectus eum atque, sint, facere amet molestiae voluptatibus alias?
+                                            </div>
+
+                                            <div class="bottom_section">
+                                                <div class="details">
+                                                    <span>Start Date:  05/01/2018</span>
+                                                    <span>End Date:  05/01/2018</span>
+                                                    <span>Duration:   60 Days</span>
+                                                </div>
+                                                <div class="members">
+                                                    <img src="" alt="">
+                                                    <img src="" alt="">
+                                                    <img src="" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project_div">
+                                                <div class="top_section">
+                                                    <div class="title">
+                                                        <h3>Project One</h3>
+                                                    </div>
+                                                    <div class="edit_delete">
+                                                        Edit | Delete
+                                                    </div>
+                                                </div>
+    
+                                                <div class="mid_section">
+                                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae soluta odio tempore nisi numquam a autem delectus eum atque, sint, facere amet molestiae voluptatibus alias?
+                                                </div>
+    
+                                                <div class="bottom_section">
+                                                    <div class="details">
+                                                        <span>Start Date:  05/01/2018</span>
+                                                        <span>End Date:  05/01/2018</span>
+                                                        <span>Duration:   60 Days</span>
+                                                    </div>
+                                                    <div class="members">
+                                                        <img src="" alt="">
+                                                        <img src="" alt="">
+                                                        <img src="" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
                                 </div>
                                 <!-- timeline rhs content -->
-
                             </div>
                             <!-- Timeline RHS Row -->
                         </div>
@@ -81,6 +150,7 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="files/js/projects.js"></script>
+<script src="files/js/projects_ui.js"></script>
+<script src="files/js/nice-select.min.js"></script>
 
 </html>
