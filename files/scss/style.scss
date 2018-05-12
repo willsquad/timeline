@@ -224,7 +224,7 @@ button {
                 margin-bottom: 0px;
 
                 @include media-breakpoint-down(lg) {
-                    font-size: 17px;
+                    //font-size: 17px;
                 }
             }
         }
@@ -829,5 +829,57 @@ button {
 
 
 /****** Projects Dashboard ******/
+#timeline_div {
+    .dashboard_lhs {
+        background-color: #212121;
 
+        &__menu {
+            padding: 0px;
+        }
+
+        .dashboard_top_bar {
+            background-color: #fff;
+            border-right: 1px solid #DFDFDF;
+        }
+
+        .dashboard_menu_element {
+            height: $timeline_lhs_menu_element_height;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 2px;
+
+            i {
+                margin-right: 10px;
+                font-size: 20px;
+            }
+
+            &.active {
+                background-color: #000;
+            }
+
+            &:hover {
+                background-color: #000;
+            }
+        }
+    }
+
+    .dashboard_rhs {
+        background-color: #fbfbfb;
+        max-width: calc(100% - 300px);
+        min-width: calc(100% - 300px);
+
+        &__top_bar {
+            background-color: #fff;
+            height: 95px;
+            color: #000;
+            display: flex;
+            box-shadow: rgba(0,0,0,0.1) 0px 0px 40px 0px;
+        }
+    }
+}
 /****** Projects Dashboard ******/
