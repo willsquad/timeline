@@ -988,6 +988,10 @@ button {
 
         &__content {
             padding: 40px 20px;
+           height: calc(100vh - #{$timeline_top_bar_height});
+            min-height: calc(100vh - #{$timeline_top_bar_height});
+            max-height: calc(100vh - #{$timeline_top_bar_height});
+            overflow: auto;
 
             .projects_page_title {
                 margin-bottom: 45px;
@@ -1110,6 +1114,7 @@ button {
                     margin: 0 auto;
                     margin-bottom: 15px;
                     padding: 20px;
+                    //cursor: pointer;
                    
 
                     .content_div_top {
@@ -1120,6 +1125,7 @@ button {
                             font-size: 16px;
                             //text-transform: uppercase;
                             font-weight: bold;
+                            cursor: pointer
                         }
     
                         .content_show_hide {
@@ -1135,11 +1141,21 @@ button {
                     }
 
                     .content_div_content {
-                        display: none;
-                        margin-top: 35px;
+                        //display: none;
+                        
+
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: visibility 0s, opacity 0.3s ease;
+                        height: 0px;
+                        margin-top: -15px;
 
                         &.show {
-                            display: block;
+                            //display: block;
+                            margin-top: 35px;
+                            visibility: visible;
+                            height: auto;
+                            opacity: 1;
                         }
 
                         .input_div {
