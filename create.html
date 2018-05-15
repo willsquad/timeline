@@ -51,6 +51,59 @@
                         <!-- TIMELINE RHS -->
                         <div class="dashboard_rhs col-12 col-md-8 col-lg-9">
                             <div class="row">
+
+                                <!-- Start of Prompt Overlay -->
+                                <div class="prompt_overlay col-12">
+                                    <div class="prompt_add_member_div col-12 col-sm-6 col-md-7 col-lg-5 col-xl-4 animated slideInDown">
+                                        
+                                        <div class="prompt_page_title">
+                                            <h2>Add Task</h2>
+                                        </div>
+
+                                        <div class="input_div">
+                                            <div class="label">Task Name</div>
+                                            <div class="input"><input type="text"></div>
+                                        </div>
+                                        <div class="input_div">
+                                            <div class="label">Assigned To</div>
+                                            <div class="input"><input type="text"></div>
+                                        </div>
+                                        <div class="input_div">
+                                            <div class="label">Details</div>
+                                            <div class="input"><textarea name="" id=""></textarea> </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 input_div">
+                                                <div class="label">Start Date</div>
+                                                <div class="input"><input type="date"></div>
+                                            </div>
+                                            <div class="col-12 col-md-6 input_div">
+                                                <div class="label">End Date</div>
+                                                <div class="input"><input type="date"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 input_div">
+                                                <div class="label">Duration (Days)</div>
+                                                <div class="input"><input type="number"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="search_projects_div save_cancel_project_buttons_div">
+                                                <a href="#" id="save_project" class="grey_button cancel_modal">Cancel</a>
+                                                <a href="#" id="save_project" class="orange_button green_button">Save</a>
+                                            </div>
+                                        
+                                        <div class="prompt_button_container">
+                                                <button class="prompt_button cancel_delete cancel_delete_export"><i class="material-icons">close</i></button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- End of Prompt Overlay -->
+
+                                        
                                     <!-- <div class="timeline_rhs top_rhs col-12 col-md-8 col-lg-9">
                                            
                                         </div> -->
@@ -84,11 +137,11 @@
                                                     Project Details
                                                 </div>
                                                 <div class="content_show_hide" data-expand="project_details_expand">
-                                                    <i class="material-icons expand-icon">remove_circle_outline</i>
+                                                    <i class="material-icons expand-icon">add_circle_outline</i>
                                                 </div>
                                             </div>
 
-                                            <div id="project_details_expand" class="content_div_content show">
+                                            <div id="project_details_expand" class="content_div_content">
                                                 <div class="input_div">
                                                     <div class="label">Project Name</div>
                                                     <div class="input"><input type="text"></div>
@@ -147,7 +200,7 @@
                                                 </div>
 
                                                 <div class="add_member_button_div">
-                                                    <a href="#" class="orange_button blue_button"><i class="material-icons">add</i> Add Member</a>
+                                                    <a id="add_member" href="#" class="orange_button green_button"><i class="material-icons">add</i> Add Member</a>
                                                 </div>
                                             </div>
 
@@ -164,11 +217,11 @@
                                                     Tasks
                                                 </div>
                                                 <div class="content_show_hide"  data-expand="task_details_expand">
-                                                    <i class="material-icons expand-icon">add_circle_outline</i>
+                                                    <i class="material-icons expand-icon">remove_circle_outline</i>
                                                 </div>
                                             </div>
 
-                                            <div id="task_details_expand" class="content_div_content">
+                                            <div id="task_details_expand" class="content_div_content show">
                                                 <div class="tasks_container">
 
                                                     <!-- Task Div -->
@@ -203,7 +256,7 @@
                                                 </div>
                                                     
                                                 <div class="add_member_button_div">
-                                                    <a href="#" class="orange_button blue_button"><i class="material-icons">add</i> Add Task</a>
+                                                    <a id="add_task" href="#" class="orange_button green_button"><i class="material-icons">add</i> Add Task</a>
                                                 </div>
                                             </div>
 
