@@ -9,14 +9,28 @@ $(document).ready(function(){
         self.closest('.content_div').find('.expand-icon').html($('#'+to_expand).hasClass('show') ? 'remove_circle_outline' : 'add_circle_outline');
     });
 
-    $(document).on('click', '#add_member, #add_task', function(){
-
+    $(document).on('click', '#add_task', function(){
         $('.prompt_overlay').show();
+        $('.prompt_add_task_div').show();
         $('body').addClass('overlay_applied');
     });
 
-    $(document).on('click', '.cancel_delete, .cancel_modal', function() {
+    $(document).on('click', '.cancel_task_delete_js, .cancel_task_modal_js', function() {
         $('.prompt_overlay').hide();
+        $('.prompt_add_task_div').hide();
         $('body').removeClass('overlay_applied');
     });
+
+    $(document).on('click', '#add_member', function(){
+        $('.prompt_overlay').show();
+        $('.prompt_add_member_div').show();
+        $('body').addClass('overlay_applied');
+    });
+
+    $(document).on('click', '.cancel_member_delete_js, .cancel_member_modal_js', function() {
+        $('.prompt_overlay').hide();
+        $('.prompt_add_member_div').hide();
+        $('body').removeClass('overlay_applied');
+    });
+
 });

@@ -194,7 +194,7 @@ button {
     user-select: none;
     //height: 100vh;
 
-    .prompt_add_member_div {
+    .prompt_add_task_div, .prompt_add_member_div {
         //height: 175px;
         background: #fff;
         margin: 0 auto;
@@ -207,7 +207,7 @@ button {
         min-width: 40%;
         max-width: 450px;
 
-        //display: none;
+        display: none;
 
         p{
             margin-bottom: 1.5em;
@@ -243,14 +243,14 @@ button {
             &.confirm_delete, &.export_csv, &.export_vcf {
                 background-color: #FF5722;
             }
-            &.cancel_delete {
+            &.cancel_button {
                 background-color: #aaa;
             }
 
-            &.cancel_delete_export {
+            &.cancle_icon {
                 position: absolute;
-                top: 5px;
-                right: 5px;
+                top: 10px;
+                right: 7px;
                 padding: 5px;
                 min-width: 40px;
                 border-radius: 0px;
@@ -273,12 +273,21 @@ button {
             text-transform: uppercase;
             color: #212121;
             font-family: montserrat;
+            margin-bottom: 20px;
         }
     }
 
     .input_div {
         margin-top: 15px;
         margin-bottom: 15px;
+
+        
+        &.upload_photo_input_div {
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+
+
         .label {
             font-size: 13px;
             font-weight: 600;
@@ -293,6 +302,12 @@ button {
                 border:none;
                 outline: none;
                 box-shadow: inset 0 1px 1px rgba(0,0,0,.125);
+
+                &.upload_photo_input {
+                    background: none;
+                    box-shadow: none;
+                    padding: 3px 0px;
+                }
             }
             textarea {
                 min-height: 105px;

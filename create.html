@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="timeline_lhs__menu dashboard_lhs__menu col-12">
                                     <div class="dashboard_menu_element active">
-                                        <i class="material-icons">account_balance</i> Projects
+                                        <i class="material-icons">dashboard</i> Projects
                                     </div>
                                     <div class="dashboard_menu_element">
                                         <i class="material-icons">settings</i> Settings
@@ -54,7 +54,52 @@
 
                                 <!-- Start of Prompt Overlay -->
                                 <div class="prompt_overlay col-12">
-                                    <div class="prompt_add_member_div col-12 col-sm-6 col-md-7 col-lg-5 col-xl-4 animated slideInDown">
+
+                                     <!-- Add Member -->
+                                     <div class="prompt_add_member_div col-12 col-sm-6 col-md-7 col-lg-5 col-xl-4 animated slideInDown">
+                                        
+                                        <div class="prompt_page_title">
+                                            <h2>Add Member</h2>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 input_div">
+                                                <div class="label">First Name</div>
+                                                <div class="input"><input type="text"></div>
+                                            </div>
+                                            <div class="col-12 col-md-6 input_div">
+                                                <div class="label">Last Name</div>
+                                                <div class="input"><input type="text"></div>
+                                            </div>
+                                        </div>                            
+
+                                        
+
+                                        <div class="input_div">
+                                            <div class="label">Designation</div>
+                                            <div class="input"><input type="text"></div>
+                                        </div>
+
+
+                                        <div class="input_div upload_photo_input_div">
+                                            <div class="label">Upload Photo</div>
+                                            <div class="input"><input type="file" class="upload_photo_input"></div>
+                                        </div>
+
+
+                                        <div class="search_projects_div save_cancel_project_buttons_div">
+                                                <a href="#" class="grey_button cancel_button cancel_member_modal_js">Cancel</a>
+                                                <a href="#" id="" class="orange_button green_button cancel_member_modal_js">Save</a>
+                                            </div>
+                                        
+                                        <div class="prompt_button_container">
+                                                <button class="prompt_button cancle_icon cancel_member_delete_js"><i class="material-icons">close</i></button>
+                                        </div>
+                                    </div>
+                                    <!-- Add Member -->
+
+                                    <!-- Add Task -->
+                                    <div class="prompt_add_task_div col-12 col-sm-6 col-md-7 col-lg-5 col-xl-4 animated slideInDown">
                                         
                                         <div class="prompt_page_title">
                                             <h2>Add Task</h2>
@@ -91,14 +136,15 @@
                                         </div>
 
                                         <div class="search_projects_div save_cancel_project_buttons_div">
-                                                <a href="#" id="save_project" class="grey_button cancel_modal">Cancel</a>
-                                                <a href="#" id="save_project" class="orange_button green_button">Save</a>
+                                                <a href="#" class="grey_button cancel_button cancel_task_modal_js">Cancel</a>
+                                                <a href="#" id="" class="orange_button green_button cancel_task_modal_js">Save</a>
                                             </div>
                                         
                                         <div class="prompt_button_container">
-                                                <button class="prompt_button cancel_delete cancel_delete_export"><i class="material-icons">close</i></button>
+                                                <button class="prompt_button cancle_icon cancel_task_delete_js"><i class="material-icons">close</i></button>
                                         </div>
                                     </div>
+                                    <!-- Add Task -->
                                     
                                 </div>
                                 <!-- End of Prompt Overlay -->
@@ -117,7 +163,7 @@
                                         </div>
                                     </div>
                                     <div class="search_projects_div save_cancel_project_buttons_div">
-                                        <a href="#" id="save_project" class="grey_button">Cancel</a>
+                                        <a href="#" id="" class="grey_button">Cancel</a>
                                         <a href="#" id="save_project" class="orange_button">Save</a>
                                     </div>
                                 </div>
@@ -137,11 +183,11 @@
                                                     Project Details
                                                 </div>
                                                 <div class="content_show_hide" data-expand="project_details_expand">
-                                                    <i class="material-icons expand-icon">add_circle_outline</i>
+                                                    <i class="material-icons expand-icon">remove_circle_outline</i>
                                                 </div>
                                             </div>
 
-                                            <div id="project_details_expand" class="content_div_content">
+                                            <div id="project_details_expand" class="content_div_content show">
                                                 <div class="input_div">
                                                     <div class="label">Project Name</div>
                                                     <div class="input"><input type="text"></div>
@@ -217,11 +263,11 @@
                                                     Tasks
                                                 </div>
                                                 <div class="content_show_hide"  data-expand="task_details_expand">
-                                                    <i class="material-icons expand-icon">remove_circle_outline</i>
+                                                    <i class="material-icons expand-icon">add_circle_outline</i>
                                                 </div>
                                             </div>
 
-                                            <div id="task_details_expand" class="content_div_content show">
+                                            <div id="task_details_expand" class="content_div_content">
                                                 <div class="tasks_container">
 
                                                     <!-- Task Div -->
